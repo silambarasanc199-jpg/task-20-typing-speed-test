@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="A responsive typing speed test with live WPM, accuracy, error highlighting and real-time progress."
+  >
+
+  <title>TypeFlow — Typing Speed Test</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <main class="app">
+
+    <!-- Header -->
+    <header class="header">
+      <div class="brand">
+        <div class="brand-icon">T</div>
+
+        <div>
+          <h1>TypeFlow</h1>
+          <p>Typing Speed Test</p>
+        </div>
+      </div>
+
+      <div class="header-badge">
+        TASK 20
+      </div>
+    </header>
+
+
+    <!-- Introduction -->
+    <section class="intro">
+      <span class="eyebrow">VEDA TECHNOLOGY · WEB DEVELOPMENT</span>
+
+      <h2>Test your typing speed.</h2>
+
+      <p>
+        Type the passage below as accurately and quickly as possible.
+        The timer starts automatically when you begin typing.
+      </p>
+    </section>
+
+
+    <!-- Statistics -->
+    <section class="stats">
+
+      <div class="stat-card">
+        <span class="stat-label">TIME</span>
+        <strong id="timer">00:00</strong>
+      </div>
+
+      <div class="stat-card">
+        <span class="stat-label">WPM</span>
+        <strong id="wpm">0</strong>
+      </div>
+
+      <div class="stat-card">
+        <span class="stat-label">ACCURACY</span>
+        <strong id="accuracy">100%</strong>
+      </div>
+
+      <div class="stat-card">
+        <span class="stat-label">ERRORS</span>
+        <strong id="errors">0</strong>
+      </div>
+
+    </section>
+
+
+    <!-- Progress -->
+    <section class="progress-section">
+
+      <div class="progress-info">
+        <span>Progress</span>
+        <span id="progressText">0%</span>
+      </div>
+
+      <div class="progress-track">
+        <div
+          class="progress-bar"
+          id="progressBar"
+        ></div>
+      </div>
+
+    </section>
+
+
+    <!-- Typing Test -->
+    <section class="test-card">
+
+      <div class="test-header">
+
+        <div>
+          <span class="section-label">PASSAGE</span>
+          <h3>Type the text below</h3>
+        </div>
+
+        <span
+          class="status"
+          id="status"
+        >
+          Ready
+        </span>
+
+      </div>
+
+
+      <!-- Passage -->
+      <div
+        class="passage"
+        id="passage"
+        aria-label="Typing passage"
+      ></div>
+
+
+      <!-- Input -->
+      <textarea
+        id="typingInput"
+        class="typing-input"
+        placeholder="Start typing here..."
+        spellcheck="false"
+        autocomplete="off"
+        autocorrect="off"
+        autocapitalize="off"
+        disabled
+        aria-label="Typing input"
+      ></textarea>
+
+
+      <div class="input-footer">
+
+        <span id="characterCount">
+          0 / 0 characters
+        </span>
+
+        <span>
+          Timer starts on first keystroke
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <!-- Controls -->
+    <section class="controls">
+
+      <button
+        id="startBtn"
+        class="btn primary"
+        type="button"
+      >
+        Start Test
+      </button>
+
+      <button
+        id="restartBtn"
+        class="btn secondary"
+        type="button"
+      >
+        Restart
+      </button>
+
+      <button
+        id="newPassageBtn"
+        class="btn secondary"
+        type="button"
+      >
+        New Passage
+      </button>
+
+    </section>
+
+
+    <!-- Result -->
+    <section
+      id="resultCard"
+      class="result-card hidden"
+    >
+
+      <div class="result-icon">
+        ✓
+      </div>
+
+      <span class="section-label">
+        TEST COMPLETED
+      </span>
+
+      <h2>Great work!</h2>
+
+      <p>
+        Here is your final typing performance.
+      </p>
+
+      <div class="result-grid">
+
+        <div class="result-item">
+          <span>WPM</span>
+          <strong id="finalWpm">0</strong>
+        </div>
+
+        <div class="result-item">
+          <span>Accuracy</span>
+          <strong id="finalAccuracy">0%</strong>
+        </div>
+
+        <div class="result-item">
+          <span>Time</span>
+          <strong id="finalTime">00:00</strong>
+        </div>
+
+        <div class="result-item">
+          <span>Errors</span>
+          <strong id="finalErrors">0</strong>
+        </div>
+
+      </div>
+
+      <button
+        id="tryAgainBtn"
+        class="btn primary result-button"
+        type="button"
+      >
+        Try Again
+      </button>
+
+    </section>
+
+
+    <!-- Instructions -->
+    <section class="instructions">
+
+      <div class="instruction">
+        <span>01</span>
+        <div>
+          <strong>Start typing</strong>
+          <p>The timer begins with your first character.</p>
+        </div>
+      </div>
+
+      <div class="instruction">
+        <span>02</span>
+        <div>
+          <strong>Watch your accuracy</strong>
+          <p>Incorrect characters are highlighted instantly.</p>
+        </div>
+      </div>
+
+      <div class="instruction">
+        <span>03</span>
+        <div>
+          <strong>Finish the passage</strong>
+          <p>Your WPM and accuracy are calculated automatically.</p>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+      <p>
+        TypeFlow · Veda Technology Internship · Task 20
+      </p>
+
+      <p>
+        Built with HTML5, CSS3 & JavaScript
+      </p>
+    </footer>
+
+  </main>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
